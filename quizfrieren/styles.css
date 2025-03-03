@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;600&display=swap');
 
+* {
+    box-sizing: border-box; /* Menjamin padding dan border dihitung dalam ukuran elemen */
+}
+
 body {
     font-family: 'Playfair Display', serif;
     background-image: url('https://images2.alphacoders.com/134/thumb-1920-1344002.jpeg'); /* Ganti dengan gambar Frieren */
@@ -12,7 +16,7 @@ body {
     height: 100vh;
     margin: 0;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden; /* Menghindari scroll horizontal */
 }
 
 /* Efek kaca untuk kesan fantasy */
@@ -176,7 +180,6 @@ button:hover {
     display: none;
 }
 
-
 #start-container {
     position: relative;
     text-align: center;
@@ -222,4 +225,84 @@ button:hover {
 
 #start-button:hover {
     background: #ffaa00;
+}
+
+/* Media Query untuk perangkat dengan lebar maksimal 768px (tablet dan ponsel) */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    #quiz-container {
+        width: 90%; /* Membuat lebar quiz-container lebih kecil di perangkat kecil */
+        max-width: 90%; /* Pastikan tidak lebih besar dari layar */
+        padding: 20px; /* Sesuaikan padding */
+    }
+
+    h1 {
+        font-size: 24px; /* Sesuaikan ukuran font di layar kecil */
+    }
+
+    #question-container {
+        font-size: 18px; /* Sesuaikan ukuran font pertanyaan */
+    }
+
+    .option {
+        font-size: 16px; /* Sesuaikan ukuran font opsi */
+        padding: 12px; /* Sesuaikan padding */
+    }
+
+    #result-image {
+        width: 200px; /* Sesuaikan ukuran gambar */
+    }
+
+    #start-container {
+        padding: 20px; /* Sesuaikan padding untuk perangkat kecil */
+    }
+
+    #start-container h1, #start-container p {
+        max-width: 100%; /* Pastikan teks tidak terpotong */
+    }
+
+    #start-button {
+        font-size: 16px; /* Sesuaikan ukuran font tombol */
+        padding: 8px 15px; /* Sesuaikan padding tombol */
+    }
+
+    #social-share button {
+        font-size: 14px; /* Sesuaikan ukuran font tombol social media */
+        padding: 8px 15px; /* Sesuaikan padding tombol */
+    }
+}
+
+/* Media Query untuk perangkat lebih kecil dari 480px (ponsel) */
+@media (max-width: 480px) {
+    #quiz-container {
+        width: 95%; /* Lebih kecil lagi di layar ponsel */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px; /* Lebih kecil lagi ukuran font judul */
+    }
+
+    .option {
+        font-size: 14px; /* Ukuran font lebih kecil untuk opsi */
+        padding: 10px; /* Lebih kecil padding untuk opsi */
+    }
+
+    #result-image {
+        width: 180px; /* Sesuaikan gambar lebih kecil di ponsel */
+    }
+
+    #start-button {
+        font-size: 14px; /* Sesuaikan ukuran font tombol untuk ponsel */
+        padding: 6px 12px; /* Lebih kecil padding tombol */
+    }
+
+    #social-share button {
+        font-size: 12px; /* Ukuran font lebih kecil */
+        padding: 6px 12px; /* Sesuaikan padding tombol */
+    }
 }
