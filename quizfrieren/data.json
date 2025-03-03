@@ -1,0 +1,184 @@
+{
+    "questions": [
+      {
+        "question": "Ketika kamu merasa tertekan, apa yang kamu lakukan untuk menenangkan diri?",
+        "options": [
+          { "text": "Merenung dalam keheningan dan merenungkan hidup", "points": 2 },
+          { "text": "Berbicara dengan teman dekat untuk mendapatkan dukungan", "points": 1 },
+          { "text": "Mengalihkan perhatian dengan melakukan aktivitas yang menyibukkan", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika ada masalah besar yang harus dipecahkan, bagaimana kamu melakukannya?",
+        "options": [
+          { "text": "Saya lebih suka memikirkannya dengan tenang, mencari solusi terbaik", "points": 2 },
+          { "text": "Saya langsung mencoba menyelesaikan masalah tersebut dengan tindakan cepat", "points": 1 },
+          { "text": "Saya merasa bingung dan butuh waktu untuk berpikir tentang itu", "points": 0 }
+        ]
+      },
+      {
+        "question": "Apa yang paling kamu hargai dalam hidup?",
+        "options": [
+          { "text": "Kenangan indah dan proses perjalanan hidup", "points": 2 },
+          { "text": "Hubungan dekat dengan orang-orang terdekat", "points": 1 },
+          { "text": "Mencapai tujuan hidup yang besar", "points": 0 }
+        ]
+      },
+      {
+        "question": "Ketika kamu berhadapan dengan seseorang yang sangat membutuhkan pertolongan, apa yang akan kamu lakukan?",
+        "options": [
+          { "text": "Memberikan pertolongan dengan sepenuh hati, tanpa banyak bertanya", "points": 1 },
+          { "text": "Mencari cara yang paling rasional untuk membantu mereka", "points": 2 },
+          { "text": "Menghindari situasi tersebut karena merasa tidak mampu membantu", "points": 0 }
+        ]
+      },
+      {
+        "question": "Bagaimana kamu melihat masa depan?",
+        "options": [
+          { "text": "Masa depan adalah perjalanan panjang yang harus dijalani dengan penuh kehati-hatian", "points": 2 },
+          { "text": "Saya percaya pada perubahan dan siap untuk menghadapinya dengan optimis", "points": 1 },
+          { "text": "Saya tidak terlalu peduli dengan masa depan, yang penting adalah hidup saat ini", "points": 0 }
+        ]
+      },
+      {
+        "question": "Apakah kamu merasa penting untuk membuat kenangan bersama orang lain?",
+        "options": [
+          { "text": "Ya, kenangan adalah hal yang sangat berharga", "points": 2 },
+          { "text": "Saya lebih suka fokus pada tujuan hidup pribadi", "points": 0 },
+          { "text": "Kenangan itu penting, tapi saya lebih mengutamakan hubungan yang sehat", "points": 1 }
+        ]
+      },
+      {
+        "question": "Bagaimana cara kamu menunjukkan perhatian terhadap teman-temanmu?",
+        "options": [
+          { "text": "Saya cenderung tidak terlalu menunjukkan emosi, tetapi selalu mendukung mereka", "points": 2 },
+          { "text": "Saya lebih sering berbicara dan memberi nasihat kepada mereka", "points": 1 },
+          { "text": "Saya lebih sering mendengarkan dan memberikan perhatian tanpa perlu banyak bicara", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika ada seseorang yang bersikap keras kepala, bagaimana kamu menghadapinya?",
+        "options": [
+          { "text": "Saya cenderung diam dan mengalah, tidak ingin berkonflik", "points": 2 },
+          { "text": "Saya mencoba berbicara rasional dan memberikan perspektif lain", "points": 1 },
+          { "text": "Saya mungkin akan menantang mereka dan bertengkar untuk membuktikan pendapat saya", "points": 0 }
+        ]
+      },
+      {
+        "question": "Saat menghadapi perasaan kesepian, apa yang kamu lakukan?",
+        "options": [
+          { "text": "Saya menikmati kesendirian dan merenung", "points": 2 },
+          { "text": "Saya mencari teman untuk berbicara dan mengisi waktu bersama", "points": 1 },
+          { "text": "Saya merasa cemas dan ingin segera mengubah situasi tersebut", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika seseorang sangat mengandalkanmu, bagaimana perasaanmu?",
+        "options": [
+          { "text": "Saya merasa dihargai dan ingin membantu mereka dengan sebaik mungkin", "points": 1 },
+          { "text": "Saya merasa sedikit terbebani, tapi saya akan tetap melakukan yang terbaik", "points": 0 },
+          { "text": "Saya merasa nyaman dan percaya diri dalam memberikan bantuan", "points": 2 }
+        ]
+      },
+      {
+        "question": "Apa yang menurutmu lebih penting dalam hidup?",
+        "options": [
+          { "text": "Mencapai kebijaksanaan dan pemahaman mendalam tentang hidup", "points": 2 },
+          { "text": "Membangun hubungan yang erat dengan orang yang saya cintai", "points": 1 },
+          { "text": "Memperoleh pencapaian besar dan sukses dalam karier atau hidup saya", "points": 0 }
+        ]
+      },
+      {
+        "question": "Apakah kamu lebih suka mengambil risiko atau bermain aman?",
+        "options": [
+          { "text": "Saya lebih suka menganalisis dulu dan memilih opsi yang lebih aman", "points": 2 },
+          { "text": "Terkadang saya suka mencoba hal baru, tetapi masih berpikir rasional", "points": 1 },
+          { "text": "Saya tidak takut mengambil risiko dan menghadapi tantangan", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika kamu punya kesempatan untuk mengubah masa lalu, apakah kamu akan melakukannya?",
+        "options": [
+          { "text": "Saya lebih suka belajar dari masa lalu daripada mengubahnya", "points": 2 },
+          { "text": "Mungkin ada beberapa hal yang ingin saya ubah untuk perbaikan", "points": 1 },
+          { "text": "Saya akan mengubah banyak hal agar hasilnya berbeda", "points": 0 }
+        ]
+      },
+      {
+        "question": "Bagaimana kamu merayakan pencapaian besar dalam hidup?",
+        "options": [
+          { "text": "Dengan berpikir dalam-dalam tentang perjalanan yang telah saya jalani", "points": 2 },
+          { "text": "Dengan merayakan bersama orang-orang terdekat yang mendukung saya", "points": 1 },
+          { "text": "Saya lebih memilih untuk bergerak maju dan tidak terlalu merayakan", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika kamu melihat seseorang terjatuh, apa yang akan kamu lakukan?",
+        "options": [
+          { "text": "Segera membantu mereka tanpa banyak bertanya", "points": 1 },
+          { "text": "Menilai situasi dulu, apakah saya bisa membantu mereka atau tidak", "points": 2 },
+          { "text": "Menyarankan mereka untuk bangkit sendiri tanpa intervensi saya", "points": 0 }
+        ]
+      },
+      {
+        "question": "Bagaimana kamu menghadapi ketakutan terbesar dalam hidupmu?",
+        "options": [
+          { "text": "Saya berusaha memahami ketakutan itu dan mencari cara untuk menghadapinya", "points": 2 },
+          { "text": "Saya cenderung menghindari situasi yang membuat saya takut", "points": 1 },
+          { "text": "Saya merasa sangat cemas dan tidak tahu harus berbuat apa", "points": 0 }
+        ]
+      },
+      {
+        "question": "Apakah kamu lebih cenderung berfokus pada tujuan jangka panjang atau menikmati momen saat ini?",
+        "options": [
+          { "text": "Saya lebih berfokus pada tujuan jangka panjang dan prosesnya", "points": 2 },
+          { "text": "Saya mencoba untuk menikmati hidup dan saat ini", "points": 1 },
+          { "text": "Saya selalu berusaha mengejar tujuan jangka pendek dan hasil yang cepat", "points": 0 }
+        ]
+      },
+      {
+        "question": "Bagaimana kamu mengatasi perbedaan pendapat dengan orang yang lebih tua?",
+        "options": [
+          { "text": "Saya berusaha mendengarkan dan memahami perspektif mereka", "points": 2 },
+          { "text": "Saya berusaha meyakinkan mereka tentang pendapat saya", "points": 1 },
+          { "text": "Saya lebih memilih untuk tidak terlibat dalam perdebatan tersebut", "points": 0 }
+        ]
+      },
+      {
+        "question": "Jika kamu bisa memilih, apakah kamu lebih memilih kekuatan atau kebijaksanaan?",
+        "options": [
+          { "text": "Saya lebih memilih kebijaksanaan untuk menghadapi tantangan hidup", "points": 2 },
+          { "text": "Kekuatan penting, tapi kebijaksanaan juga sangat berguna", "points": 1 },
+          { "text": "Saya lebih memilih kekuatan untuk mengatasi masalah langsung", "points": 0 }
+        ]
+      }
+    ],
+  
+    "characters": [
+      {
+        "name": "Frieren",
+        "minPoints": 0,
+        "maxPoints": 10,
+        "description": "Tenang, filosofis, sulit menunjukkan emosi, namun lembut terhadap teman-temannya. Suka merenung dan menghargai proses hidup."
+      },
+      {
+        "name": "Fern",
+        "minPoints": 11,
+        "maxPoints": 20,
+        "description": "Rasional, disiplin, sedikit tsundere, sering mengurus Frieren layaknya ibu bagi anaknya. Memiliki pendirian yang kuat dalam hidup."
+      },
+      {
+        "name": "Stark",
+        "minPoints": 21,
+        "maxPoints": 30,
+        "description": "Pemalu, mudah canggung, tapi pemberani saat dibutuhkan. Ingin melindungi teman-temannya. Mencari rasa aman di antara orang-orang yang dia percayai."
+      },
+      {
+        "name": "Himmel",
+        "minPoints": 31,
+        "maxPoints": 40,
+        "description": "Karismatik, optimis, suka menolong orang lain, ingin dikenang sebagai pahlawan yang baik. Memiliki semangat untuk selalu membantu dan menjadi inspirasi."
+      }
+    ]
+  }
+  
