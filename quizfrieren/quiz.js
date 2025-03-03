@@ -2,102 +2,108 @@ let currentQuestionIndex = 0;
 let score = 0;
 let data = {};
 
-// Function to load data from JSON file
-fetch('data.json')
-    .then(response => response.json())
-    .then(json => {
-        data = json;
-        displayQuestion(); // Initialize quiz once data is loaded
-    })
-    .catch(error => console.error('Error loading JSON data:', error));
+// Ambil elemen yang diperlukan
+const startContainer = document.getElementById('start-container');
+const quizContainer = document.getElementById('quiz-container');
+const resultContainer = document.getElementById('result-container');
+const questionContainer = document.getElementById('question-container');
 
-// Function to display the current question
+// Fungsi memulai kuis
+function startQuiz() {
+    startContainer.style.display = 'none'; // Sembunyikan halaman pembuka
+    quizContainer.style.display = 'block'; // Tampilkan kuis
+
+    // Mulai menampilkan pertanyaan
+    fetch('data.json')
+        .then(response => response.json())
+        .then(json => {
+            data = json;
+            if (data.questions && data.questions.length > 0) {
+                displayQuestion();
+            } else {
+                console.error("Data pertanyaan kosong atau tidak ditemukan.");
+            }
+        })
+        .catch(error => console.error('Gagal memuat JSON:', error));
+}
+
+// Fungsi menampilkan pertanyaan
 function displayQuestion() {
-  if (data.questions.length === 0) {
-    alert("Data not loaded correctly.");
-    return;
-  }
+    if (!data.questions || data.questions.length === 0) {
+        console.error("Pertanyaan tidak tersedia.");
+        return;
+    }
 
-  const questionContainer = document.getElementById('question-container');
-  const questionData = data.questions[currentQuestionIndex];
-  
-  // Clear previous content
-  questionContainer.innerHTML = '';
-  
-  // Display the question
-  const questionText = document.createElement('h2');
-  questionText.innerText = questionData.question;
-  questionContainer.appendChild(questionText);
-  
-  // Create options
-  questionData.options.forEach(option => {
-    const optionDiv = document.createElement('div');
-    optionDiv.classList.add('option');
-    optionDiv.innerText = option.text;
-    
-    // Add event listener to handle selection
-    optionDiv.onclick = () => {
-      score += option.points;
-      nextQuestion();
-    };
-    
-    questionContainer.appendChild(optionDiv);
-  });
+    const questionData = data.questions[currentQuestionIndex];
+    if (!questionData || !questionData.options) {
+        console.error("Format pertanyaan tidak valid.");
+        return;
+    }
+
+    // Bersihkan tampilan sebelumnya
+    questionContainer.innerHTML = '';
+
+    // Tampilkan teks pertanyaan
+    const questionText = document.createElement('h2');
+    questionText.innerText = questionData.question;
+    questionContainer.appendChild(questionText);
+
+    // Buat pilihan jawaban
+    questionData.options.forEach(option => {
+        const optionDiv = document.createElement('div');
+        optionDiv.classList.add('option');
+        optionDiv.innerText = option.text;
+        optionDiv.onclick = () => {
+            score += option.points;
+            nextQuestion();
+        };
+        questionContainer.appendChild(optionDiv);
+    });
 }
 
-// Function to move to the next question
+// Fungsi pindah ke pertanyaan berikutnya
 function nextQuestion() {
-  // Go to the next question
-  currentQuestionIndex++;
-  
-  // Check if we have more questions
-  if (currentQuestionIndex < data.questions.length) {
-    displayQuestion();
-  } else {
-    // If no more questions, show the result
-    showResult();
-  }
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < data.questions.length) {
+        displayQuestion();
+    } else {
+        showResult();
+    }
 }
 
-// Function to display the final result
+// Fungsi menampilkan hasil akhir
 function showResult() {
-  const questionContainer = document.getElementById('question-container');
-  const resultContainer = document.getElementById('result-container');
-  
-  // Find the character based on the score
-  const character = data.characters.find(c => score >= c.minPoints && score <= c.maxPoints);
-  
-  // Show the result
-  document.getElementById('result-character').innerText = character.name;
-  document.getElementById('result-description').innerText = character.description;
-  
-  // Set character image
-  document.getElementById('result-image').src = character.image;
-  
-  questionContainer.style.display = 'none'; // Hide the question container
-  resultContainer.style.display = 'block'; // Show the result container
+    quizContainer.style.display = 'none';
+    resultContainer.style.display = 'block';
 
-  document.getElementById('next-button').style.display = 'none'; // Hide next button after quiz ends
+    // Menentukan karakter berdasarkan skor
+    const character = data.characters.find(c => score >= c.minPoints && score <= c.maxPoints);
+    
+    if (character) {
+        document.getElementById('result-character').innerText = character.name;
+        document.getElementById('result-description').innerText = character.description;
+
+        // Tampilkan gambar karakter
+        const resultImage = document.getElementById('result-image');
+        resultImage.src = character.image;
+        resultImage.style.display = 'block';
+    }
 }
 
-// Share to Facebook
+// Fungsi berbagi ke media sosial
 function shareOnFacebook() {
     const url = window.location.href;
-    const text = `Saya mengikuti kuis karakter Frieren dan saya cocok dengan karakter: ${document.getElementById('result-character').innerText}! Ikuti kuisnya di ${url}`;
-    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
-    window.open(facebookUrl, '_blank');
+    const text = `Saya cocok dengan karakter ${document.getElementById('result-character').innerText} dari Frieren! Ikuti kuisnya di ${url}`;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Share to Twitter
 function shareOnTwitter() {
-    const text = `Saya mengikuti kuis karakter Frieren dan saya cocok dengan karakter: ${document.getElementById('result-character').innerText}! Ikuti kuisnya sekarang!`;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-    window.open(twitterUrl, '_blank');
+    const text = `Saya cocok dengan karakter ${document.getElementById('result-character').innerText} dari Frieren! Ikuti kuis ini!`;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Share to WhatsApp
 function shareOnWhatsApp() {
-    const text = `Saya mengikuti kuis karakter Frieren dan saya cocok dengan karakter: ${document.getElementById('result-character').innerText}! Ikuti kuisnya di: ${window.location.href}`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
+    const text = `Saya cocok dengan karakter ${document.getElementById('result-character').innerText} dari Frieren! Ikuti kuis di: ${window.location.href}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 }
