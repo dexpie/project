@@ -6,29 +6,37 @@
     <title>Kuis Karakter Frieren</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="quiz-container">
-        <h1>Kuis Karakter Frieren: Pilih Jawabanmu</h1>
-        <div id="question-container">
-            <!-- Pertanyaan akan muncul di sini -->
+    <body>
+        <!-- Halaman pembuka -->
+        <div id="start-container">
+            <h1>Selamat Datang di Kuis Karakter Frieren!</h1>
+            <p>Jawablah beberapa pertanyaan dan temukan karakter dari anime <i>Frieren: Beyond Journey’s End</i> yang paling cocok dengan kepribadianmu.</p>
+            <button id="start-button" onclick="startQuiz()">Mulai Kuis</button>
         </div>
-        <button id="next-button" onclick="nextQuestion()">Next Question</button>
-    </div>
     
-    <div id="result-container" style="display:none;">
-        <h2>Hasil: <span id="result-character"></span></h2>
-        <div id="character-image">
-            <img id="result-image" src="" alt="Karakter" />
+        <!-- Kontainer kuis -->
+        <div id="quiz-container" style="display: none;">
+            <h1>Kuis Karakter Frieren: Pilih Jawabanmu</h1>
+            <div id="question-container">
+                <!-- Pertanyaan akan muncul di sini -->
+            </div>
+            <button id="next-button" onclick="nextQuestion()">Next Question</button>
         </div>
-        <p id="result-description"></p>
-        <!-- Tombol untuk share ke media sosial -->
-        <div id="social-share">
-            <button onclick="shareOnFacebook()">Share on Facebook</button>
-            <button onclick="shareOnTwitter()">Share on Twitter</button>
-            <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+        
+        <!-- Kontainer hasil -->
+        <div id="result-container" style="display:none;">
+            <h2>Hasil: <span id="result-character"></span></h2>
+            <div id="character-image">
+                <img id="result-image" src="" alt="Karakter" style="display: none;" />
+            </div>
+            <p id="result-description"></p>
+            <div id="social-share">
+                <button onclick="shareOnFacebook()">Share on Facebook</button>
+                <button onclick="shareOnTwitter()">Share on Twitter</button>
+                <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+            </div>
         </div>
-    </div>
-
-    <script src="quiz.js"></script>
-</body>
-</html>
+    
+        <script src="quiz.js"></script>
+    </body>
+    
