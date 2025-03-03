@@ -160,7 +160,7 @@
         "minPoints": 0,
         "maxPoints": 10,
         "description": "Tenang, filosofis, sulit menunjukkan emosi, namun lembut terhadap teman-temannya. Suka merenung dan menghargai proses hidup.",
-        "image_url": "https://i.pinimg.com/736x/d7/88/00/d78800881f6dbca7b3d95f258f72a8b0.jpg"
+        "image": "https://i.pinimg.com/736x/d7/88/00/d78800881f6dbca7b3d95f258f72a8b0.jpg"
       },
       {
         "name": "Fern",
@@ -174,14 +174,14 @@
         "minPoints": 21,
         "maxPoints": 30,
         "description": "Pemalu, mudah canggung, tapi pemberani saat dibutuhkan. Ingin melindungi teman-temannya. Mencari rasa aman di antara orang-orang yang dia percayai.",
-        "image_url": "https://i.pinimg.com/736x/f8/8d/53/f88d535e67eb73d1b5c8a2b17107d070.jpg"
+        "image": "https://i.pinimg.com/originals/00/37/43/00374381816a8b294c467eed490824e6.webp"
       },
       {
         "name": "Himmel",
         "minPoints": 31,
         "maxPoints": 40,
         "description": "Karismatik, optimis, suka menolong orang lain, ingin dikenang sebagai pahlawan yang baik. Memiliki semangat untuk selalu membantu dan menjadi inspirasi.",
-        "image_url": "https://i.pinimg.com/736x/1d/70/f2/1d70f2e7b78b1e32a91c51d5c99f6ea0.jpg"
+        "image": "https://i.pinimg.com/736x/1d/70/f2/1d70f2e7b78b1e32a91c51d5c99f6ea0.jpg"
       }
     ]
   }
