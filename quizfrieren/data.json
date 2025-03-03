@@ -160,28 +160,28 @@
         "minPoints": 0,
         "maxPoints": 10,
         "description": "Tenang, filosofis, sulit menunjukkan emosi, namun lembut terhadap teman-temannya. Suka merenung dan menghargai proses hidup.",
-        "image_url": "https://i.pinimg.com/736x/d7/88/00/d78800881f6dbca7b3d95f258f72a8b0.jpg"
+        "image": "https://i.pinimg.com/736x/d7/88/00/d78800881f6dbca7b3d95f258f72a8b0.jpg"
       },
       {
         "name": "Fern",
         "minPoints": 11,
         "maxPoints": 20,
         "description": "Rasional, disiplin, sedikit tsundere, sering mengurus Frieren layaknya ibu bagi anaknya. Memiliki pendirian yang kuat dalam hidup.",
-        "image_url": "https://i.pinimg.com/736x/99/ae/ae/99aeaea4d9fab0cd9af40f1644ea73f5.jpg"
+        "image": "https://i.pinimg.com/736x/99/ae/ae/99aeaea4d9fab0cd9af40f1644ea73f5.jpg"
       },
       {
         "name": "Stark",
         "minPoints": 21,
         "maxPoints": 30,
         "description": "Pemalu, mudah canggung, tapi pemberani saat dibutuhkan. Ingin melindungi teman-temannya. Mencari rasa aman di antara orang-orang yang dia percayai.",
-        "image_url": "https://github.com/dexpie/project/blob/main/quizfrieren/images/Stark.jpg"
+        "image": "https://github.com/dexpie/project/blob/main/quizfrieren/images/Stark.jpg"
       },
       {
         "name": "Himmel",
         "minPoints": 31,
         "maxPoints": 40,
         "description": "Karismatik, optimis, suka menolong orang lain, ingin dikenang sebagai pahlawan yang baik. Memiliki semangat untuk selalu membantu dan menjadi inspirasi.",
-        "image_url": "https://i.pinimg.com/736x/1d/70/f2/1d70f2e7b78b1e32a91c51d5c99f6ea0.jpg"
+        "image": "https://i.pinimg.com/736x/1d/70/f2/1d70f2e7b78b1e32a91c51d5c99f6ea0.jpg"
       }
     ]
   }
