@@ -1,12 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;600&display=swap');
 
 * {
-    box-sizing: border-box; /* Menjamin padding dan border dihitung dalam ukuran elemen */
+    box-sizing: border-box;
 }
 
+/* Gaya untuk kontainer loading */
+#loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    flex-direction: column;
+}
+
+#loading-text {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 32px;
+    animation: fadeIn 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading-animation img {
+    width: 150px;
+    height: auto;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gaya untuk halaman kuis */
 body {
-    font-family: 'Playfair Display', serif;
-    background-image: url('https://images2.alphacoders.com/134/thumb-1920-1344002.jpeg'); /* Ganti dengan gambar Frieren */
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://images2.alphacoders.com/134/thumb-1920-1344002.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -16,10 +79,10 @@ body {
     height: 100vh;
     margin: 0;
     color: #fff;
-    overflow-x: hidden; /* Menghindari scroll horizontal */
+    overflow-x: hidden;
 }
 
-/* Efek kaca untuk kesan fantasy */
+/* Kontainer kuis */
 #quiz-container {
     background: rgba(255, 255, 255, 0.15);
     padding: 30px;
@@ -31,6 +94,8 @@ body {
     transition: transform 0.3s ease;
     backdrop-filter: blur(12px);
     border: 2px solid rgba(255, 255, 255, 0.3);
+    min-height: 400px;
+    /* Pastikan kuis memiliki tinggi tetap */
 }
 
 #quiz-container:hover {
@@ -44,265 +109,142 @@ h1 {
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
 }
 
-/* Tombol RPG-style */
-button {
-    background: linear-gradient(to bottom, #6a5acd, #483d8b);
-    color: white;
-    border: 2px solid #fff;
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-button:hover {
-    background: linear-gradient(to bottom, #7b68ee, #5a4fcf);
-    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.8);
-}
-
-/* Pertanyaan */
-#question-container {
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
-}
-
-/* Opsi RPG-style */
-.option {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    margin: 8px 0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    font-size: 18px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Efek glow saat hover */
-.option:hover {
-    background: rgba(255, 255, 255, 0.5);
-    border-color: white;
-    transform: scale(1.1);
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.8);
-}
-
-/* Efek glowing seperti skill di RPG */
-.option::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.option:hover::before {
-    opacity: 1;
-}
-
-/* Bagian hasil kuis */
-#result-container {
-    text-align: center;
-    color: #fff;
-}
-
-/* Gambar karakter */
-#character-image {
-    margin: 20px 0;
-}
-
-#result-image {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
-    border: 2px solid #fff;
-}
-
-/* Tombol share sosial media */
-#social-share button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-#social-share button:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-/* Facebook */
-#social-share button:nth-child(1) {
-    background: #4267B2;
-}
-
-#social-share button:nth-child(1):hover {
-    background: #365899;
-}
-
-/* Twitter */
-#social-share button:nth-child(2) {
-    background: #1DA1F2;
-}
-
-#social-share button:nth-child(2):hover {
-    background: #0d95e8;
-}
-
-/* WhatsApp */
-#social-share button:nth-child(3) {
-    background: #25D366;
-}
-
-#social-share button:nth-child(3):hover {
-    background: #128C7E;
-}
-
-#next-button {
-    display: none;
-}
-
-#start-container {
-    position: relative;
-    text-align: center;
-    padding: 50px;
-    color: white;
-}
-
-/* Overlay semi-transparan untuk teks */
-#start-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Warna hitam transparan */
-    z-index: 1;
-}
-
-/* Agar teks tidak menyatu dengan background */
-#start-container h1, #start-container p {
-    position: relative;
-    z-index: 2;
-    margin: 10px auto;
-    max-width: 80%;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Tombol agar lebih terlihat */
+/* Tombol Mulai Kuis dengan Tema Genshin */
 #start-button {
-    position: relative;
-    z-index: 2;
-    background: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    background: linear-gradient(to bottom, #4f41b8, #2f2781);
+    /* Background ungu seperti Genshin */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border-radius: 25px;
+    border: 3px solid #3c237f;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Shadow untuk tombol */
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 #start-button:hover {
-    background: #ffaa00;
+    background: linear-gradient(to bottom, #5c47b0, #4a3574);
+    /* Efek hover dengan warna lebih terang */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    /* Bayangan lebih besar */
+    transform: scale(1.05);
+    /* Efek zoom saat hover */
 }
 
-/* Media Query untuk perangkat dengan lebar maksimal 768px (tablet dan ponsel) */
-@media (max-width: 768px) {
-    body {
-        height: auto;
-        padding: 20px;
-    }
-
-    #quiz-container {
-        width: 90%; /* Membuat lebar quiz-container lebih kecil di perangkat kecil */
-        max-width: 90%; /* Pastikan tidak lebih besar dari layar */
-        padding: 20px; /* Sesuaikan padding */
-    }
-
-    h1 {
-        font-size: 24px; /* Sesuaikan ukuran font di layar kecil */
-    }
-
-    #question-container {
-        font-size: 18px; /* Sesuaikan ukuran font pertanyaan */
-    }
-
-    .option {
-        font-size: 16px; /* Sesuaikan ukuran font opsi */
-        padding: 12px; /* Sesuaikan padding */
-    }
-
-    #result-image {
-        width: 200px; /* Sesuaikan ukuran gambar */
-    }
-
-    #start-container {
-        padding: 20px; /* Sesuaikan padding untuk perangkat kecil */
-    }
-
-    #start-container h1, #start-container p {
-        max-width: 100%; /* Pastikan teks tidak terpotong */
-    }
-
-    #start-button {
-        font-size: 16px; /* Sesuaikan ukuran font tombol */
-        padding: 8px 15px; /* Sesuaikan padding tombol */
-    }
-
-    #social-share button {
-        font-size: 14px; /* Sesuaikan ukuran font tombol social media */
-        padding: 8px 15px; /* Sesuaikan padding tombol */
-    }
+/* Gaya untuk Opsi Jawaban Tema Genshin */
+.option {
+    background: rgba(255, 255, 255, 0.1);
+    /* Background transparan dengan sedikit putih */
+    color: #f2f2f2;
+    /* Warna teks putih */
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #d8d8d8;
+    /* Border tipis */
+    padding: 18px 25px;
+    /* Padding lebih besar untuk opsi */
+    margin: 15px 0;
+    /* Jarak antar opsi */
+    border-radius: 15px;
+    /* Sudut melengkung */
+    text-align: left;
+    /* Teks rata kiri */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Shadow untuk tombol */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Pastikan lebar opsi tetap */
+    min-height: 60px;
+    /* Pastikan opsi memiliki tinggi yang cukup */
 }
 
-/* Media Query untuk perangkat lebih kecil dari 480px (ponsel) */
-@media (max-width: 480px) {
-    #quiz-container {
-        width: 95%; /* Lebih kecil lagi di layar ponsel */
-        padding: 15px;
-    }
+/* Efek hover pada opsi dengan perubahan warna */
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    /* Background berubah saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    /* Bayangan lebih besar saat hover */
+    transform: scale(1.05);
+    /* Efek zoom saat hover */
+}
 
-    h1 {
-        font-size: 20px; /* Lebih kecil lagi ukuran font judul */
-    }
+/* Gambar Hasil Kuis */
+#result-image {
+    width: 200px;
+    /* Ukuran gambar yang lebih kecil */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+    border: 2px solid #fff;
+    display: block;
+    margin: 0 auto;
+}
 
-    .option {
-        font-size: 14px; /* Ukuran font lebih kecil untuk opsi */
-        padding: 10px; /* Lebih kecil padding untuk opsi */
-    }
+/* Menata tulisan hasil di tengah */
+#result-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    #result-image {
-        width: 180px; /* Sesuaikan gambar lebih kecil di ponsel */
-    }
+#result-character {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
 
-    #start-button {
-        font-size: 14px; /* Sesuaikan ukuran font tombol untuk ponsel */
-        padding: 6px 12px; /* Lebih kecil padding tombol */
-    }
+#result-description {
+    font-size: 18px;
+    color: #f1f1f1;
+    font-style: italic;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-    #social-share button {
-        font-size: 12px; /* Ukuran font lebih kecil */
-        padding: 6px 12px; /* Sesuaikan padding tombol */
-    }
+/* Tombol Share seperti Tombol Wish */
+.share-button {
+    background-color: #fff;
+    color: #4a4a4a;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #c1c1c1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+.share-button:hover {
+    background-color: #e3e3e3;
+    border-color: #a1a1a1;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.share-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Instagram Button khusus */
+.share-button:nth-child(4) {
+    background-color: #E4405F;
+    color: white;
+}
+
+.share-button:nth-child(4):hover {
+    background-color: #C13584;
 }
