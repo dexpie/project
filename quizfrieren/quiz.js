@@ -2,18 +2,27 @@ let currentQuestionIndex = 0;
 let score = 0;
 let data = {};
 
-// Ambil elemen yang diperlukan
 const startContainer = document.getElementById('start-container');
 const quizContainer = document.getElementById('quiz-container');
 const resultContainer = document.getElementById('result-container');
 const questionContainer = document.getElementById('question-container');
+const loadingContainer = document.getElementById('loading-container');
+
+// Fungsi untuk menampilkan loading dan memulai kuis
+window.onload = () => {
+    loadingContainer.style.display = 'flex';
+
+    setTimeout(() => {
+        loadingContainer.style.display = 'none';
+        startContainer.style.display = 'block';
+    }, 3000);
+};
 
 // Fungsi memulai kuis
 function startQuiz() {
-    startContainer.style.display = 'none'; // Sembunyikan halaman pembuka
-    quizContainer.style.display = 'block'; // Tampilkan kuis
+    startContainer.style.display = 'none';
+    quizContainer.style.display = 'block';
 
-    // Mulai menampilkan pertanyaan
     fetch('data.json')
         .then(response => response.json())
         .then(json => {
@@ -40,18 +49,16 @@ function displayQuestion() {
         return;
     }
 
-    // Bersihkan tampilan sebelumnya
     questionContainer.innerHTML = '';
 
-    // Tampilkan teks pertanyaan
     const questionText = document.createElement('h2');
     questionText.innerText = questionData.question;
     questionContainer.appendChild(questionText);
 
-    // Buat pilihan jawaban
+    // Menambahkan opsi dengan kelas 'option'
     questionData.options.forEach(option => {
         const optionDiv = document.createElement('div');
-        optionDiv.classList.add('option');
+        optionDiv.classList.add('option'); // Menambahkan kelas untuk styling
         optionDiv.innerText = option.text;
         optionDiv.onclick = () => {
             score += option.points;
@@ -64,7 +71,6 @@ function displayQuestion() {
 // Fungsi pindah ke pertanyaan berikutnya
 function nextQuestion() {
     currentQuestionIndex++;
-
     if (currentQuestionIndex < data.questions.length) {
         displayQuestion();
     } else {
@@ -77,14 +83,11 @@ function showResult() {
     quizContainer.style.display = 'none';
     resultContainer.style.display = 'block';
 
-    // Menentukan karakter berdasarkan skor
     const character = data.characters.find(c => score >= c.minPoints && score <= c.maxPoints);
-    
+
     if (character) {
         document.getElementById('result-character').innerText = character.name;
         document.getElementById('result-description').innerText = character.description;
-
-        // Tampilkan gambar karakter
         const resultImage = document.getElementById('result-image');
         resultImage.src = character.image;
         resultImage.style.display = 'block';
@@ -106,4 +109,10 @@ function shareOnTwitter() {
 function shareOnWhatsApp() {
     const text = `Saya cocok dengan karakter ${document.getElementById('result-character').innerText} dari Frieren! Ikuti kuis di: ${window.location.href}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function shareOnInstagram() {
+    const url = window.location.href;
+    const text = `Saya cocok dengan karakter ${document.getElementById('result-character').innerText} dari Frieren! Ikuti kuisnya di ${url}`;
+    alert("Copy dan paste hasil ini di Instagram bersama dengan gambar! \n\n" + text);
 }
