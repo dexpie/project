@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuis Karakter Frieren</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    <body>
-        <!-- Halaman pembuka -->
-        <div id="start-container">
-            <h1>Selamat Datang di Kuis Karakter Frieren!</h1>
-            <p>Jawablah beberapa pertanyaan dan temukan karakter dari anime <i>Frieren: Beyond Journey’s End</i> yang paling cocok dengan kepribadianmu.</p>
-            <button id="start-button" onclick="startQuiz()">Mulai Kuis</button>
+
+<body>
+    <!-- Kontainer Loading -->
+    <div id="loading-container">
+        <div id="loading-text">Memulai Petualangan...</div>
+        <div id="loading-animation">
+            <img src="https://giffiles.alphacoders.com/221/221854.gif" alt="Loading" />
         </div>
-    
-        <!-- Kontainer kuis -->
-        <div id="quiz-container" style="display: none;">
-            <h1>Kuis Karakter Frieren: Pilih Jawabanmu</h1>
-            <div id="question-container">
-                <!-- Pertanyaan akan muncul di sini -->
-            </div>
-            <button id="next-button" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <!-- Halaman Pembuka -->
+    <div id="start-container" style="display:none;">
+        <h1>Selamat Datang di Kuis Karakter Frieren!</h1>
+        <p>Jawablah beberapa pertanyaan dan temukan karakter dari anime <i>Frieren: Beyond Journey’s End</i> yang paling
+            cocok dengan kepribadianmu.</p>
+        <button id="start-button" onclick="startQuiz()">Mulai Kuis</button> <!-- Tombol Mulai Kuis -->
+    </div>
+
+    <!-- Kontainer Kuis -->
+    <div id="quiz-container" style="display: none;">
+        <h1>Kuis Karakter Frieren: Pilih Jawabanmu</h1>
+        <div id="question-container">
+            <!-- Pertanyaan akan muncul di sini -->
         </div>
-        
-        <!-- Kontainer hasil -->
-        <div id="result-container" style="display:none;">
-            <h2>Hasil: <span id="result-character"></span></h2>
-            <div id="character-image">
-                <img id="result-image" src="" alt="Karakter" style="display: none;" />
-            </div>
+    </div>
+
+    <!-- Kontainer Hasil -->
+    <div id="result-container" style="display:none;">
+        <div id="result-header">
+            <h2 id="result-character"></h2>
             <p id="result-description"></p>
-            <div id="social-share">
-                <button onclick="shareOnFacebook()">Share on Facebook</button>
-                <button onclick="shareOnTwitter()">Share on Twitter</button>
-                <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
-            </div>
         </div>
-    
-        <script src="quiz.js"></script>
-    </body>
-    
+        <div id="character-image">
+            <img id="result-image" src="" alt="Karakter" /> <!-- Gambar Hasil -->
+        </div>
+        <div id="social-share">
+            <button class="share-button" onclick="shareOnFacebook()">
+                <img src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                    alt="Facebook Icon"> Share on Facebook
+            </button>
+            <button class="share-button" onclick="shareOnTwitter()">
+                <img src="https://clipartcraft.com/images/twitter-logo-transparent-background-8.png" alt="Twitter Icon">
+                Share on Twitter
+            </button>
+            <button class="share-button" onclick="shareOnWhatsApp()">
+                <img src="https://static.vecteezy.com/system/resources/previews/016/716/468/original/whatsapp-icon-free-png.png"
+                    alt="WhatsApp Icon"> Share on WhatsApp
+            </button>
+            <button class="share-button" onclick="shareOnInstagram()">
+                <img src="https://static.vecteezy.com/system/resources/previews/017/743/717/large_2x/instagram-icon-logo-free-png.png"
+                    alt="Instagram Icon"> Share on Instagram
+            </button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+
+</html>
